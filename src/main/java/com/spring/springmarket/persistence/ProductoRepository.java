@@ -5,6 +5,7 @@ import com.spring.springmarket.domain.repository.ProductRepository;
 import com.spring.springmarket.persistence.crud.ProductoCrudRepository;
 import com.spring.springmarket.persistence.entity.Producto;
 import com.spring.springmarket.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,9 @@ spring, pero con Repository indicamos que tipo de componente es.
  */
 @Repository
 public class ProductoRepository implements ProductRepository {
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     @Override
