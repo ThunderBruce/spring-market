@@ -21,7 +21,7 @@ public class PurchaseController {
     }
 
     @GetMapping("/client/{id}")
-    public ResponseEntity<List<Purchase>> getByClient(@PathVariable("idClient") String clientId) {
+    public ResponseEntity<List<Purchase>> getByClient(@PathVariable("id") String clientId) {
         return purchaseService.getByClient(clientId).map(
                 purchases -> new ResponseEntity<>(purchases, HttpStatus.OK)
         ).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
